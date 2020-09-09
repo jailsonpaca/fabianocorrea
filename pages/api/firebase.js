@@ -3,14 +3,14 @@ import 'firebase/firestore';
 //import "firebase/auth";
 
 const config={
-    apiKey: "AIzaSyCIRPDLxH1rNPmlx1v9sjE3fj_tgWr0wPg",
-    authDomain: "fabianocorreasite.firebaseapp.com",
-    databaseURL: "https://fabianocorreasite.firebaseio.com",
-    projectId: "fabianocorreasite",
-    storageBucket: "fabianocorreasite.appspot.com",
-    messagingSenderId: "1071618794884",
-    appId: "1:1071618794884:web:0613f01ff7dce6ffe769d1",
-    measurementId: "G-R0356LDYXJ"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId:process.env.measurementId
 };
  
 
