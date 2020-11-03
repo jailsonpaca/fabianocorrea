@@ -9,7 +9,6 @@ export default function getData(){
         db.collection("posts").where('published', '==', true).get(),
     ]).then((responses)=>{
         if(responses){
-            console.log("responses:");
             return {
                 plans:responses[0].docs.map(doc => doc.data()),
                 depoiments:responses[1].docs.map(doc => doc.data()),

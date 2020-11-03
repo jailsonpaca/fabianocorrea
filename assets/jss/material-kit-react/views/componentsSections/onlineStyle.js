@@ -82,8 +82,10 @@ const onlineStyle = theme => ({
 
 
   planContainer: {
-    maxWidth: "94%",
+    maxWidth: "93%",
     flexWrap: 'nowrap',
+    margin: 0,
+    marginLeft: '0.1%',
     [theme.breakpoints.down("sm")]: {
       //marginRight: "2%",
       //marginLeft: "1%",

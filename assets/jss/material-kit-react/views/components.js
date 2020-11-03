@@ -28,7 +28,7 @@ const componentsStyle =theme=>({
     width: "40%"
   },
   headerLogo:{
-    width:"90%",
+    width:"50%",
     [theme.breakpoints.down("sm")]:{
       width:"45%",
     },

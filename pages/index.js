@@ -53,7 +53,6 @@ const useStyles = makeStyles(styles);
 export default function Home(props) {
   
   const {plans=defaultplans,depoiments=[]}=props;
-  console.log(depoiments);
   const classes = useStyles();
   const { ...rest } = props;
   const isSmall = useMediaQuery('(max-width:450px)');
