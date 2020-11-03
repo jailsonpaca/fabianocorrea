@@ -47,7 +47,7 @@ export default function Depoiments({ depoiments = [] }) {
                   <p><strong>"</strong>{depoiment.description}<strong>"</strong></p>
                 </div>
               </GridItem>
-            ))}
+            ))}            
           </GridContainer>
         </div>
         <div className={classes.space50} />

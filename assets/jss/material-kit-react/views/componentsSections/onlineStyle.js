@@ -32,8 +32,8 @@ const onlineStyle = theme => ({
   },
   btnAgendar: {
     display: "block",
-    margin: "auto",
     fontSize: "100%",
+    margin: "15% auto",
     [theme.breakpoints.up("sm")]: {
       maxWidth: "50%",
       marginTop: "15%",

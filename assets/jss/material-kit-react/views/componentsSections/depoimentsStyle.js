@@ -7,12 +7,12 @@ const depoimentsStyle = theme => ({
     padding: "70px 0"
   },
   container,
-  depoimentsContainer: {
-    maxWidth: "100%",
+  planContainer: {
+    maxWidth: "93%",
     flexWrap: 'nowrap',
+    margin: 0,
+    marginLeft: '0.1%',
     [theme.breakpoints.down("sm")]: {
-      //marginRight: "2%",
-      //marginLeft: "1%",
       marginLeft: '0.1%',
       flexWrap: 'wrap'
     },
@@ -113,9 +113,8 @@ const depoimentsStyle = theme => ({
     width: "260px"
   },
   itemGrid: {
-    padding: 0,
+    padding: 10,
     margin: "auto",
-   
   },
   imageContainer: {
     overflow: "hidden",
