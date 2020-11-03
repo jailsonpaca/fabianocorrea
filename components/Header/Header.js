@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -21,8 +21,8 @@ const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const classes = useStyles();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  React.useEffect(() => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
     if (props.changeColorOnScroll) {
       if(typeof window != 'undefined'){
         window.addEventListener("scroll", headerColorChange);
@@ -49,12 +49,12 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
-        if(typeof document.body.getElementsByClassName(classes.container)[0] != undefined){
+        if(typeof document.body.getElementsByClassName(classes.container)[0] !== 'undefined'){
       document.body
         .getElementsByClassName(classes.container)[0]
         .classList.add(classes.containerOnScroll);
         }
-        if(typeof document.body.getElementsByClassName(classes.scrollDownBtn)[0] != undefined){
+        if(typeof document.body.getElementsByClassName(classes.scrollDownBtn)[0] !== 'undefined'){
       document.body
         .getElementsByClassName(classes.scrollDownBtn)[0].style.display = "none";
       }
@@ -65,12 +65,12 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
-        if(typeof document.body.getElementsByClassName(classes.container)[0] != undefined){
+        if(typeof document.body.getElementsByClassName(classes.container)[0] !== 'undefined'){
             document.body
             .getElementsByClassName(classes.container)[0]
             .classList.remove(classes.containerOnScroll);
           }
-          if(typeof document.body.getElementsByClassName(classes.scrollDownBtn)[0] != undefined){
+          if(typeof document.body.getElementsByClassName(classes.scrollDownBtn)[0] !== 'undefined'){
       document.body
         .getElementsByClassName(classes.scrollDownBtn)[0].style.display = "block";
           }

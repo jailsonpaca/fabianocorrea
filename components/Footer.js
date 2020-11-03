@@ -32,15 +32,15 @@ export default function Footer(props) {
           <GridContainer justify="center">
             <h3>Me acompanhe nas redes sociais:</h3>
           </GridContainer>
-          <Button color="youtube">
+          {/*<Button color="youtube">
             <YouTube className={classes.socials} />
             Assista
-          </Button>
-          <Button color="facebook" >
+          </Button>*/}
+          <Button color="facebook" href="https://www.facebook.com/fabiano.machadocorrea" >
             <Facebook className={classes.socials} />
             Curta
           </Button>
-          <Button color="instagram">
+          <Button color="instagram" href="https://www.instagram.com/fabianocorreaoficial">
             <Instagram className={classes.socials} />
             Siga
           </Button>
@@ -50,7 +50,7 @@ export default function Footer(props) {
         <div className={classes.left}>
         Site Desenvolvido Por 
           <a
-            href="https://japps.com"
+            href="https://japps.site"
             className={aClasses}
             target="_blank"
           >

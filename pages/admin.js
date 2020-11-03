@@ -2,7 +2,7 @@ import Iframe from 'react-iframe'
 
 export default function Admin(){
     return(
-        <Iframe url="https://fabianocorreasite.web.app/admin"
+        <Iframe url="https://fabianocorreasite.web.app"
             position="absolute"
             width="100%"
             id="myId"

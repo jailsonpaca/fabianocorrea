@@ -181,7 +181,7 @@ html{
 .card:nth-child(6){
   position: relative;
   top:0px;
-  right:850px;
+  right:880px;
   z-index: 5;
 }
 @media only screen and(max-width:400px){
@@ -218,12 +218,12 @@ html{
   height: 100%;
   width:100%;
   position:absolute;
-  top:65px;
+  top:65px; 
  
 }
 
 .wave {
-  background: url(../media/wave.svg) repeat-x; 
+  background: url(../img/wave.svg) repeat-x; 
   position: relative;
   top: 400px;
   width: 100%;

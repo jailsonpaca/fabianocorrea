@@ -1,4 +1,4 @@
-import Head from 'next/head'
+
 //import styles from '../styles/Home.module.css'
 import React from "react";
 // nodejs library that concatenates classes
@@ -21,7 +21,7 @@ import Services from "../components/Sections/Services.js";
 import Courses from "../components//Sections/Courses.js";
 import Online from "../components/Sections/Online.js";
 import Depoiments from "../components/Sections/Depoiments.js";
-
+import getData from './api/getData';
 import styles from "../assets/jss/material-kit-react/views/components.js";
 
 const defaultplans = [{
@@ -51,32 +51,15 @@ const defaultplans = [{
 const useStyles = makeStyles(styles);
 
 export default function Home(props) {
-  console.log(props);
-  var plans;
-  if (typeof props.data.plans != undefined) {
-    plans = props.data.plans;
-  } else {
-    plans = defaultplans;
-  }
-  //const posts = props.data.posts;
+  
+  const {plans=defaultplans,depoiments=[]}=props;
+  console.log(depoiments);
   const classes = useStyles();
   const { ...rest } = props;
   const isSmall = useMediaQuery('(max-width:450px)');
 
   return (
     <>
-      <Head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-        <meta name="theme-color" content="#000000" />
-        <link rel="manifest" href="./manifest.json" />
-        <link rel="shortcut icon" href="./favicon.ico" />
-        <link rel="apple-touch-icon" sizes="76x76" href="./apple-icon.png" />
-        <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-        <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet" />
-        <title>Fabiano Correa | Psicólogo | Hipnose | Coach</title>
-      </Head>
       <div className={classes.backStage}>
         <Header
           brand={<img src={HeaderLogo} alt="Fabiano Correa hipnose e psicanalistalogia" className={classes.headerLogo} />}
@@ -109,7 +92,7 @@ export default function Home(props) {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <Services />
-          <Depoiments />
+          <Depoiments depoiments={depoiments}/>
           <Online plans={plans} />
           <Courses />
           {/*
@@ -120,12 +103,25 @@ export default function Home(props) {
             </Button>
           </Link>
         </GridItem>*/}
-        </div>
-        {isSmall && (<Button color="success" justIcon round className={classes.whatsAppBtn}>
+        </div> 
+        {isSmall && (<Button color="success" 
+         href="https://api.whatsapp.com/send?phone=5548999673317&text=Ol%C3%A1%20Fabiano%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20sua%20consulta%20de%20Hipnose"
+        justIcon round className={classes.whatsAppBtn}>
           <WhatsAppIcon />
         </Button>)}
         <Footer />
       </div>
     </>
   )
+}
+
+export const getStaticProps=async ()=> {
+  const data=await getData();
+  return {
+    props:{
+      plans:JSON.parse(JSON.stringify(data.plans)),
+      depoiments:JSON.parse(JSON.stringify(data.depoiments)),
+      error:false},
+    revalidate:100
+  }
 }

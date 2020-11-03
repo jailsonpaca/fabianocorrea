@@ -1,12 +1,13 @@
-import '../styles/globals.css'
-import useSWR from 'swr'
-import getData from './api/getData';
+import '../styles/globals.css';
+import Head from "next/head";
+
+/*import useSWR from 'swr'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { Alert, AlertTitle } from '@material-ui/lab';
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps,data,error }) {
 
-  const { data, error } = useSWR('/api/user', getData);
+  //const { data, error } = useSWR('/api/user', getData);
   if (error) {
     return <div>
       <Alert severity="error">
@@ -19,7 +20,20 @@ function MyApp({ Component, pageProps }) {
       <CircularProgress className='loader' thickness={2} size={250} /></div>;
   }
   return <Component {...pageProps} data={data} />
+}*/
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+        <title>Fabiano Correa | Psicólogo | Hipnose | Coach</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 
-export default MyApp;
+
+
+

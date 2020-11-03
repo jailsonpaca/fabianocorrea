@@ -238,7 +238,7 @@ html {
 }
 
 .wave {
-  background: url(../media/wave.svg) repeat-x;
+  background: url(../images/wave.svg) repeat-x;
   position: relative;
   top: 400px;
   width: 100%;

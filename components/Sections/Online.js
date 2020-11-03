@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useMediaQuery } from '@material-ui/core';
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
+import ScheduleIcon from '@material-ui/icons/Schedule';
 import Button from "../Button.js";
 import TouchApp from "@material-ui/icons/TouchApp";
 import Divider from '@material-ui/core/Divider';
@@ -47,9 +47,8 @@ const useStyles = makeStyles(styles);
 }];*/
 
 
-export default function Online({ plans }) {
-  //const plans=plans;
-  console.log(plans);
+export default function Online({ plans=[] }) {
+
   const classes = useStyles();
   const isSmall = useMediaQuery('(max-width:450px)');
   const theme = useTheme();
@@ -71,13 +70,17 @@ export default function Online({ plans }) {
              possuo a metodologia de consulta online, voce pode resolver seus problemas e dificuldades
              direto da sua casa!
           </h4>
+              <Button color="success" className={classes.btnAgendar} size="lg"
+                href="https://api.whatsapp.com/send?phone=5548999673317&text=Ol%C3%A1%20Fabiano%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20sua%20consulta%20de%20Hipnose">
+                <ScheduleIcon className={classes.icons} /> Agende Já!
+          </Button>
             </GridItem>
             <GridItem xs={12} sm={6} md={6}>
               <a href="https://goo.gl/maps/4aZ5c7fsXmRUsi6f9"><img src={mapa} className={classes.mapa} alt="consultório do fabiano correa" /></a>
             </GridItem>
           </GridContainer>
           <div className={classes.space70} />
-          <GridContainer className={classes.planContainer}>
+          <GridContainer spacing={isSmall ?(0):(4)} className={classes.planContainer}>
             {plans.map((e, i) => (
               <GridItem key={i} xs={12} sm={isTablet ? (6) : (3)} className={classes.plan} style={{ backgroundColor: `${e.color}` }}>
                 <div className={classes.card} >

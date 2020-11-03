@@ -1,4 +1,5 @@
 const imagesStyles = {
+  
   imgFluid: {
     maxWidth: "100%",
     height: "auto"

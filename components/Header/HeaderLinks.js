@@ -49,7 +49,8 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://fabianocorrea.com/lives"
+          //href="https://fabianocorrea.com/lives"
+          href="https://www.instagram.com/fabianocorreaoficial/channel/"
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -59,7 +60,8 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://fabianocorrea.com/blog"
+          //href="https://fabianocorrea.com/blog"
+          href="https://www.instagram.com/fabianocorreaoficial/"
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -67,7 +69,7 @@ export default function HeaderLinks(props) {
           <Mms className={classes.icons} fontSize="large"  /> BLOG
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/*<ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="O que faço?"
@@ -91,7 +93,7 @@ export default function HeaderLinks(props) {
             </Link>
           ]}
         />
-      </ListItem>
+      </ListItem>*/}
 
       <ListItem className={classes.listItem}>
         <Tooltip
@@ -119,7 +121,7 @@ export default function HeaderLinks(props) {
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/fabianocorrea26/"
+            href="https://www.instagram.com/fabianocorreaoficial/"
             target="_blank"
             className={classes.navLink}
           >

@@ -196,7 +196,7 @@ html {
 .card:nth-child(6) {
   position: relative;
   top: 0px;
-  right: 850px;
+  right: 880px;
   z-index: 5
 }
 
@@ -231,7 +231,7 @@ html {
 }
 
 .wave {
-  background: url(../media/wave.svg) repeat-x;
+  background: url(../images/wave.svg) repeat-x;
   position: relative;
   top: 400px;
   width: 100%;

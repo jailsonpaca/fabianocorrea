@@ -2,24 +2,38 @@ import { container, title } from "../../../material-kit-react.js";
 
 import imagesStyles from "../../../material-kit-react/imagesStyles.js";
 
-const depoimentsStyle = theme=>({
+const depoimentsStyle = theme => ({
   section: {
     padding: "70px 0"
   },
   container,
+  depoimentsContainer: {
+    maxWidth: "100%",
+    flexWrap: 'nowrap',
+    [theme.breakpoints.down("sm")]: {
+      //marginRight: "2%",
+      //marginLeft: "1%",
+      marginLeft: '0.1%',
+      flexWrap: 'wrap'
+    },
+    [theme.breakpoints.between('600', '800')]: {
+      maxWidth: '100%',
+      flexWrap: 'wrap'
+    }
+  },
   space50: {
     height: "50px",
     display: "block"
   },
-  card:{
+  card: {
     background: "#00B6FF",
-    "&:hover":{
-    boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.5)",
+    "&:hover": {
+      boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.5)",
     },
     padding: "1em",
     borderRadius: "10px",
     width: "100%",
-    margin:"auto",
+    margin: "auto",
     display: "inline-block",
     clipPath: "circle(110% at 50% 20%)",
     transition: "all .5s ease-in-out",
@@ -36,19 +50,19 @@ const depoimentsStyle = theme=>({
     "& h1": {
       margin: 0,
       fontSize: "25px",
-      minHeight:"56px",
+      minHeight: "56px",
     },
-    "& h2":{
-      color:"#eee",
+    "& h2": {
+      color: "#eee",
       fontSize: "20px",
-      marginTop:"2px", 
+      marginTop: "2px",
     },
     "& p": {
-      marginTop:"10px",
-      textAlign:"center",
+      marginTop: "10px",
+      textAlign: "center",
       fontSize: "20px",
       lineHeight: "30px",
-      "& strong":{
+      "& strong": {
         fontSize: "30px",
         padding: "5px",
       }
@@ -59,17 +73,23 @@ const depoimentsStyle = theme=>({
     marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none",
-    textAlign:"center",
+    textAlign: "center",
+    "& h1":{
+      fontSize:'280%'
+    }
   },
-  subTitle:{
-    textAlign:"center",
+  subTitle: {
+    textAlign: "center",
   },
-  btnAgendar:{
+  btnAgendar: {
     display: "block",
-    margin:"auto",
+    margin: "auto",
     fontSize: "100%",
+    [theme.breakpoints.up("sm")]: {
+      maxWidth: "30%",
+    },
   },
-  icons:{
+  icons: {
     width: "30px !important",
     height: "30px !important",
   },
@@ -93,12 +113,20 @@ const depoimentsStyle = theme=>({
     width: "260px"
   },
   itemGrid: {
+    padding: 0,
+    margin: "auto",
+   
+  },
+  imageContainer: {
+    overflow: "hidden",
+    borderRadius: "50%",
+    width: 250,
+    height: 250,
+    margin: "auto",
     [theme.breakpoints.down("sm")]: {
-    margin:"10px",  
-    },  
-    [theme.breakpoints.up("sm")]: {
-      margin:"auto",  
-      }
+      width: 200,
+      height: 200,
+    },
   },
   ...imagesStyles
 });

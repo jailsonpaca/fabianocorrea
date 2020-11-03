@@ -12,18 +12,21 @@ import styles from "../assets/jss/material-kit-react/components/parallaxStyle.js
 const useStyles = makeStyles(styles);
 
 export default function Parallax(props) {
-  let windowScrollTop;
-  if(typeof window != 'undefined'){
-  if (window.innerWidth >= 768) {
-    windowScrollTop = window.pageYOffset / 3;
-  } else {
-    windowScrollTop = 0;
-  }
-}
+
+
   const [transform, setTransform] = React.useState(
-    "translate3d(0," + windowScrollTop + "px,0)"
+    "translate3d(0,1573.3333333333333px,0)"
   );
   React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let windowScrollTop;
+      if (window.innerWidth >= 768) {
+        windowScrollTop = window.pageYOffset / 3;
+      } else {
+        windowScrollTop = 0;
+      }
+      setTransform("translate3d(0," + windowScrollTop + "px,0)");
+    }
     if (typeof window != 'undefined' && window.innerWidth >= 768) {
       window.addEventListener("scroll", resetTransform);
     }
@@ -34,10 +37,10 @@ export default function Parallax(props) {
     };
   });
   const resetTransform = () => {
-    var windowScrollTop = typeof window != 'undefined' ? (window.pageYOffset / 3):(300);
+    var windowScrollTop = typeof window != 'undefined' ? (window.pageYOffset / 3) : (300);
     setTransform("translate3d(0," + windowScrollTop + "px,0)");
   };
-  const { filter, className, children, style, image, small,isImage } = props;
+  const { filter, className, children, style, image, small, isImage } = props;
   const classes = useStyles();
   const parallaxClasses = classNames({
     [classes.parallax]: true,
@@ -45,16 +48,20 @@ export default function Parallax(props) {
     [classes.small]: small,
     [className]: className !== undefined
   });
-  if(isImage){
-    var parallaxStyle={...style,
-    backgroundImage: "url(" + image + ")",
-    transform: transform};
-  }else{
-    var parallaxStyle={...style,
-      transform: transform};
-    }
+  if (isImage) {
+    var parallaxStyle = {
+      ...style,
+      backgroundImage: "url(" + image + ")",
+      transform: transform
+    };
+  } else {
+    var parallaxStyle = {
+      ...style,
+      transform: transform
+    };
+  }
   return (
-    
+
     <div
       className={parallaxClasses}
       style={parallaxStyle}
@@ -69,7 +76,7 @@ Parallax.propTypes = {
   filter: PropTypes.bool,
   children: PropTypes.node,
   style: PropTypes.string,
-  isImage:PropTypes.bool,
+  isImage: PropTypes.bool,
   image: PropTypes.string,
   small: PropTypes.bool
 };
