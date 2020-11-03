@@ -5,7 +5,6 @@ import { makeStyles, Link } from "@material-ui/core";
 import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
 import { useMediaQuery } from '@material-ui/core';
-import image from "../../assets/img/avatar.jpg";
 import Button from "../Button.js";
 import ScheduleIcon from '@material-ui/icons/Schedule';
 

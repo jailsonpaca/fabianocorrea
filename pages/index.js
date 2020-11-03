@@ -91,7 +91,9 @@ export default function Home(props) {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <Services />
-          <Depoiments depoiments={depoiments}/>
+          {depoiments.length > 0 &&(
+            <Depoiments depoiments={depoiments}/>
+          )}
           <Online plans={plans} />
           <Courses />
           {/*
