@@ -1,5 +1,22 @@
 {
     "cSpell.words": [
         "depoiments"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#1d50ef",
+        "activityBar.activeBorder": "#f46a8c",
+        "activityBar.background": "#1d50ef",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#f46a8c",
+        "activityBarBadge.foreground": "#15202b",
+        "statusBar.background": "#0e3ccb",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#1d50ef",
+        "titleBar.activeBackground": "#0e3ccb",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#0e3ccb99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#0e3ccb"
 }

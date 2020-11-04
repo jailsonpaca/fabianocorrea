@@ -30,8 +30,25 @@ const headerLinksStyle = theme => ({
         height: "1px",
         marginLeft: "15px",
         backgroundColor: "#e5e5e5"
-      }
-    }
+      },
+      "&:last-of-type div": {
+        width: '100%',
+        maxWidth: 180,
+      },
+      "&:last-of-type div div:nth-child(2)": {
+        transform: 'translate3d(20px, -23px, 0px) !important',
+      },
+    },
+
+    [theme.breakpoints.up("sm")]: {
+      "&:last-of-type div div:nth-child(2)": {
+        transform: 'translate3d(-50px, 54px, 0px) !important',
+      },
+      "&:last-of-type div": {
+        width: '100%',
+        maxWidth: 160,
+      },
+    },
   },
   listItemText: {
     padding: "0 !important"
@@ -62,9 +79,9 @@ const headerLinksStyle = theme => ({
         justifyContent: "flex-start"
       }
     },
-    [theme.breakpoints.between("800","1100")]: {
-    padding: "5px"
-    }
+    [theme.breakpoints.between("800", "1100")]: {
+      padding: "5px"
+    },
   },
   notificationNavLink: {
     color: "#444444",
@@ -99,21 +116,22 @@ const headerLinksStyle = theme => ({
     marginRight: "4px"
   },
   dropdownLink: {
+
     "&,&:focus": {
       color: "#444444",
       textDecoration: "none",
       display: "block",
-      padding: "10px 20px"
+      padding: "10px 20px",
     },
-    "&:hover":{
-      color:"#fff"
+    "&:hover": {
+      color: "#fff"
     }
   }, icons: {
     width: "40px !important",
     height: "40px !important",
     marginRight: "3px",
-    fontSize:"40px",
-    color:"#444444"
+    fontSize: "40px",
+    color: "#444444"
   },
   ...tooltip,
   marginRight5: {

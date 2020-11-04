@@ -53,7 +53,7 @@ const useStyles = makeStyles(styles);
 
 export default function Home(props) {
 
-  const { plans = defaultplans, depoiments = [] } = props;
+  const { plans = defaultplans, depoiments = [],landings=[] } = props;
   const classes = useStyles();
   const { ...rest } = props;
   const isSmall = useMediaQuery('(max-width:450px)');
@@ -63,7 +63,7 @@ export default function Home(props) {
       <div className={classes.backStage}>
         <Header
           brand={<img src={HeaderLogo} alt="Fabiano Correa hipnose e psicanalistalogia" className={classes.headerLogo} />}
-          rightLinks={<HeaderLinks />}
+          rightLinks={<HeaderLinks landings={landings} />}
           fixed
           color="white"
           changeColorOnScroll={{
@@ -124,6 +124,7 @@ export const getStaticProps = async () => {
     props: {
       plans: JSON.parse(JSON.stringify(data.plans)),
       depoiments: JSON.parse(JSON.stringify(data.depoiments)),
+      landings:JSON.parse(JSON.stringify(data.landings)),
       error: false
     },
     revalidate: 100

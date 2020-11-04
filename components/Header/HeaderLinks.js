@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import Link from 'next/link'
 // @material-ui/core components
@@ -11,7 +9,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 import { useMediaQuery } from '@material-ui/core';
 // @material-ui/icons
-import { Help, PersonPinCircle, WhatsApp, LiveTv, Mms,Facebook,Instagram } from "@material-ui/icons";
+import { Help, PersonPinCircle, WhatsApp, LiveTv, Mms, Facebook, Instagram } from "@material-ui/icons";
 // core components
 import CustomDropdown from "../CustomDropdown.js";
 import Button from "../Button.js";
@@ -20,25 +18,26 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks({ landings = [] }) {
   const classes = useStyles();
+  console.log('lan:', landings);
   const isSmall = useMediaQuery('(max-width:450px)');
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button
-          onClick={()=>document.getElementById('onlineID').scrollIntoView()}
+          onClick={() => document.getElementById('onlineID').scrollIntoView()}
           //href="https://fabianocorrea.com/meu-consultorio"
           color="transparent"
           target="_blank"
           className={classes.navLink}
         >
-          <PersonPinCircle className={classes.icons} fontSize="large"  /> Meu Consultório
+          <PersonPinCircle className={classes.icons} fontSize="large" /> Meu Consultório
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          onClick={()=>document.getElementById('onlineID').scrollIntoView()}
+          onClick={() => document.getElementById('onlineID').scrollIntoView()}
           //href="#onlineID"
           color="transparent"
           target="_blank"
@@ -55,7 +54,7 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-          <LiveTv className={classes.icons} fontSize="large"  /> LIVES
+          <LiveTv className={classes.icons} fontSize="large" /> LIVES
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -66,34 +65,9 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-          <Mms className={classes.icons} fontSize="large"  /> BLOG
+          <Mms className={classes.icons} fontSize="large" /> BLOG
         </Button>
       </ListItem>
-      {/*<ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="O que faço?"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Help}
-          dropdownList={[
-            <Link href="/hipnose" className={classes.dropdownLink}>
-              HIPNOSE
-            </Link>,
-            <Link href="/marketing" className={classes.dropdownLink}>
-              MARKETING
-            </Link>,
-            <Link href="/treinamentos" className={classes.dropdownLink}>
-              TREINAMENTOS
-            </Link>,
-            <Link href="/coaching" className={classes.dropdownLink}>
-              COACHING
-            </Link>
-          ]}
-        />
-      </ListItem>*/}
 
       <ListItem className={classes.listItem}>
         <Tooltip
@@ -129,6 +103,34 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem>
+      <ListItem className={classes.listItem} style={{paddingTop:20}}>
+        <CustomDropdown
+          //noLiPadding
+          //buttonText="MAIS"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent",
+          }}
+          //buttonIcon={Help}
+          dropdownList={landings.map((e, i) => (
+            <Link href={`/paginas/${e.pageName}`} className={classes.dropdownLink}>
+              {e.title}
+            </Link>
+          ))}
+        />
+      </ListItem>
+      {/*<Link href="/hipnose" className={classes.dropdownLink}>
+              HIPNOSE
+            </Link>,
+            <Link href="/marketing" className={classes.dropdownLink}>
+              MARKETING
+            </Link>,
+            <Link href="/treinamentos" className={classes.dropdownLink}>
+              TREINAMENTOS
+            </Link>,
+            <Link href="/coaching" className={classes.dropdownLink}>
+              COACHING
+          </Link>*/}
     </List>
   );
 }
