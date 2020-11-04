@@ -103,7 +103,7 @@ export default function HeaderLinks({ landings = [] }) {
           </Button>
         </Tooltip>
       </ListItem>
-      <ListItem className={classes.listItem} style={{paddingTop:20}}>
+      {landings.length > 0 && (<ListItem className={classes.listItem} style={{ paddingTop: 20 }}>
         <CustomDropdown
           //noLiPadding
           //buttonText="MAIS"
@@ -118,7 +118,7 @@ export default function HeaderLinks({ landings = [] }) {
             </Link>
           ))}
         />
-      </ListItem>
+      </ListItem>)}
       {/*<Link href="/hipnose" className={classes.dropdownLink}>
               HIPNOSE
             </Link>,
