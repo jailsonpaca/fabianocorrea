@@ -39,8 +39,8 @@ const linksStyle = theme => ({
         margin: 'auto',
         paddingLeft: "0",
         listStyle: "none",
-        paddingTop: "0",
-        paddingBottom: "0",
+        paddingTop: "2%",
+        paddingBottom: "6%",
         color: "#444444"
     },
     listItem: {

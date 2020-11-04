@@ -15,7 +15,8 @@ import GridItem from "../components/Grid/GridItem.js";
 import Button from "../components/Button.js";
 import Parallax from "../components/Parallax.js";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import fabianoCircle from '../assets/img/fabianoCircle.png'
+import fabianoCircle from '../assets/img/fabianoCircle.png';
+import fabianoCircleDesk from '../assets/img/fabianoCircleDesk.png';
 // sections for this page
 import Services from "../components/Sections/Services.js";
 import Courses from "../components//Sections/Courses.js";
@@ -51,8 +52,8 @@ const defaultplans = [{
 const useStyles = makeStyles(styles);
 
 export default function Home(props) {
-  
-  const {plans=defaultplans,depoiments=[]}=props;
+
+  const { plans = defaultplans, depoiments = [] } = props;
   const classes = useStyles();
   const { ...rest } = props;
   const isSmall = useMediaQuery('(max-width:450px)');
@@ -72,7 +73,8 @@ export default function Home(props) {
           {...rest}
         />
         <Parallax /*image={require("assets/img/storyImage.png")}*/ isImage={false} className={classes.parallax}>
-          <img src={fabianoCircle} className={classes.fabianoCircle} alt="hipnoterapeuta fabiano correa" />
+          {isSmall ? (<img src={fabianoCircle} className={classes.fabianoCircle} alt="hipnoterapeuta fabiano correa" />)
+            : (<img src={fabianoCircleDesk} className={classes.fabianoCircle} alt="hipnoterapeuta fabiano correa" />)}
           <div className="waveEffect">
             <div className="wave"></div>
             <div className="wave"></div>
@@ -91,8 +93,8 @@ export default function Home(props) {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <Services />
-          {depoiments.length > 0 &&(
-            <Depoiments depoiments={depoiments}/>
+          {depoiments.length > 0 && (
+            <Depoiments depoiments={depoiments} />
           )}
           <Online plans={plans} />
           <Courses />
@@ -104,10 +106,10 @@ export default function Home(props) {
             </Button>
           </Link>
         </GridItem>*/}
-        </div> 
-        {isSmall && (<Button color="success" 
-         href="https://api.whatsapp.com/send?phone=5548999673317&text=Ol%C3%A1%20Fabiano%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20sua%20consulta%20de%20Hipnose"
-        justIcon round className={classes.whatsAppBtn}>
+        </div>
+        {isSmall && (<Button color="success"
+          href="https://api.whatsapp.com/send?phone=5548999673317&text=Ol%C3%A1%20Fabiano%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20sua%20consulta%20de%20Hipnose"
+          justIcon round className={classes.whatsAppBtn}>
           <WhatsAppIcon />
         </Button>)}
         <Footer />
@@ -116,13 +118,14 @@ export default function Home(props) {
   )
 }
 
-export const getStaticProps=async ()=> {
-  const data=await getData();
+export const getStaticProps = async () => {
+  const data = await getData();
   return {
-    props:{
-      plans:JSON.parse(JSON.stringify(data.plans)),
-      depoiments:JSON.parse(JSON.stringify(data.depoiments)),
-      error:false},
-    revalidate:100
+    props: {
+      plans: JSON.parse(JSON.stringify(data.plans)),
+      depoiments: JSON.parse(JSON.stringify(data.depoiments)),
+      error: false
+    },
+    revalidate: 100
   }
 }
