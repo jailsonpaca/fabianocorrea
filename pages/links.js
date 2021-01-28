@@ -44,8 +44,8 @@ export default function Links({ links }) {
             Meu Facebook
           </Button>
                 </ListItem>
-                <ListItem className={classes.listItem}>
-                    <Button fullWidth color="instagram" href="https://www.instagram.com/fabianocorreaoficial">
+                <ListItem className={classes.listItem}> 
+                    <Button fullWidth color="instagram" href="https://www.instagram.com/oficialfabianocorrea">
                         <Instagram className={classes.icons} />
         Meu Instagram
         </Button>

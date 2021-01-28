@@ -40,7 +40,7 @@ export default function Footer(props) {
             <Facebook className={classes.socials} />
             Curta
           </Button>
-          <Button color="instagram" href="https://www.instagram.com/fabianocorreaoficial">
+          <Button color="instagram" href="https://www.instagram.com/oficialfabianocorrea">
             <Instagram className={classes.socials} />
             Siga
           </Button>

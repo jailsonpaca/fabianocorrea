@@ -49,7 +49,7 @@ export default function HeaderLinks({ landings = [] }) {
       <ListItem className={classes.listItem}>
         <Button
           //href="https://fabianocorrea.com/lives"
-          href="https://www.instagram.com/fabianocorreaoficial/channel/"
+          href="https://www.instagram.com/oficialfabianocorrea/channel/"
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -60,7 +60,7 @@ export default function HeaderLinks({ landings = [] }) {
       <ListItem className={classes.listItem}>
         <Button
           //href="https://fabianocorrea.com/blog"
-          href="https://www.instagram.com/fabianocorreaoficial/"
+          href="https://www.instagram.com/oficialfabianocorrea"
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -95,7 +95,7 @@ export default function HeaderLinks({ landings = [] }) {
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/fabianocorreaoficial/"
+            href="https://www.instagram.com/oficialfabianocorrea"
             target="_blank"
             className={classes.navLink}
           >
