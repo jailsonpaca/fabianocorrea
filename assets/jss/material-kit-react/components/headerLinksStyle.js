@@ -2,7 +2,7 @@ import { defaultFont } from "../../material-kit-react.js";
 
 import tooltip from "../../material-kit-react/tooltipsStyle.js";
 
-const headerLinksStyle = theme => ({
+const headerLinksStyle = (theme) => ({
   list: {
     ...defaultFont,
     fontSize: "14px",
@@ -11,7 +11,7 @@ const headerLinksStyle = theme => ({
     listStyle: "none",
     paddingTop: "0",
     paddingBottom: "0",
-    color: "#444444"
+    color: "#444444",
   },
   listItem: {
     float: "left",
@@ -29,35 +29,35 @@ const headerLinksStyle = theme => ({
         display: "block",
         height: "1px",
         marginLeft: "15px",
-        backgroundColor: "#e5e5e5"
+        backgroundColor: "#e5e5e5",
       },
       "&:last-of-type div": {
-        width: '100%',
+        width: "100%",
         maxWidth: 180,
       },
       "&:last-of-type div div:nth-child(2)": {
-        transform: 'translate3d(20px, -23px, 0px) !important',
+        transform: "translate3d(20px, -23px, 0px) !important",
       },
     },
 
     [theme.breakpoints.up("sm")]: {
       "&:last-of-type div div:nth-child(2)": {
-        transform: 'translate3d(-50px, 54px, 0px) !important',
+        transform: "translate3d(-50px, 54px, 0px) !important",
       },
       "&:last-of-type div": {
-        width: '100%',
+        width: "100%",
         maxWidth: 160,
       },
     },
   },
   listItemText: {
-    padding: "0 !important"
+    padding: "0 !important",
   },
   navLink: {
-    color: "#444444",
+    color: "#fff",
     position: "relative",
     padding: "0.9375rem",
-    fontWeight: "400",
+    fontWeight: "500",
     fontSize: "12px",
     textTransform: "uppercase",
     borderRadius: "3px",
@@ -66,8 +66,8 @@ const headerLinksStyle = theme => ({
     margin: "0px",
     display: "inline-flex",
     "&:hover,&:focus": {
-      color: "inherit",
-      background: "rgba(200, 200, 200, 0.2)"
+      color: "#fff",
+      background: "rgba(200, 200, 200, 0.2)",
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
@@ -76,11 +76,11 @@ const headerLinksStyle = theme => ({
       marginTop: "8px",
       textAlign: "left",
       "& > span:first-child": {
-        justifyContent: "flex-start"
-      }
+        justifyContent: "flex-start",
+      },
     },
     [theme.breakpoints.between("800", "1100")]: {
-      padding: "5px"
+      padding: "5px",
     },
   },
   notificationNavLink: {
@@ -93,7 +93,7 @@ const headerLinksStyle = theme => ({
     textDecoration: "none",
     margin: "0px",
     display: "inline-flex",
-    top: "4px"
+    top: "4px",
   },
   registerNavLink: {
     top: "3px",
@@ -104,19 +104,18 @@ const headerLinksStyle = theme => ({
     lineHeight: "20px",
     textDecoration: "none",
     margin: "0px",
-    display: "inline-flex"
+    display: "inline-flex",
   },
   navLinkActive: {
     color: "inherit",
-    backgroundColor: "rgba(255, 255, 255, 0.1)"
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
   },
   socialIcons: {
     position: "relative",
     fontSize: "20px !important",
-    marginRight: "4px"
+    marginRight: "4px",
   },
   dropdownLink: {
-
     "&,&:focus": {
       color: "#444444",
       textDecoration: "none",
@@ -124,19 +123,20 @@ const headerLinksStyle = theme => ({
       padding: "10px 20px",
     },
     "&:hover": {
-      color: "#fff"
-    }
-  }, icons: {
+      color: "#fff",
+    },
+  },
+  icons: {
     width: "40px !important",
     height: "40px !important",
     marginRight: "3px",
     fontSize: "40px",
-    color: "#444444"
+    color: "#fff",
   },
   ...tooltip,
   marginRight5: {
-    marginRight: "5px"
-  }
+    marginRight: "5px",
+  },
 });
 
 export default headerLinksStyle;

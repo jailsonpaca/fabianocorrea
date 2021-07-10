@@ -3,14 +3,13 @@ import { container, title } from "../../../material-kit-react.js";
 
 //const isTablet = useMediaQuery('(min-width:800px and max-width:1100px )');
 
-const onlineStyle = theme => ({
+const onlineStyle = (theme) => ({
   section: {
     padding: "70px 0",
-
   },
   space70: {
     height: "70px",
-    display: "block"
+    display: "block",
   },
   container,
   title: {
@@ -19,13 +18,24 @@ const onlineStyle = theme => ({
     minHeight: "32px",
     textDecoration: "none",
     textAlign: "center",
+    color: "#fff",
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "20px",
-      paddingRight: "20px"
-    }
+      paddingRight: "20px",
+    },
   },
   textCenter: {
     textAlign: "center",
+    color: "#fff",
+    paddingLeft: 80,
+    paddingRight: 40,
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "8%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "8%",
+      paddingRight: "8%",
+    },
   },
   container: {
     //marginLeft: "1.5%"
@@ -33,10 +43,13 @@ const onlineStyle = theme => ({
   btnAgendar: {
     display: "block",
     fontSize: "100%",
-    margin: "15% auto",
+    margin: "10% auto",
     [theme.breakpoints.up("sm")]: {
       maxWidth: "50%",
-      marginTop: "15%",
+      marginLeft: "28%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "80%",
     },
   },
   obsContainer: {
@@ -53,14 +66,16 @@ const onlineStyle = theme => ({
       width: "100%",
     },
   },
+  linkMap: { display: "flex", justifyContent: "center" },
   mapa: {
-    maxWidth: "100%",
+    maxWidth: "80%",
     transition: "transform .3s ease-in-out",
-    boxShadow: "0 0 15px 2px #999",
+    borderRadius: 6,
+    boxShadow: "0 0 8px 2px #999",
     "&:hover": {
-      boxShadow: "0 0 15px 5px #999",
-      transform: "scale(1.02)"
-    }
+      boxShadow: "0 0 8px 3px #999",
+      transform: "scale(1.02)",
+    },
   },
   btnQuero: {
     display: "block",
@@ -72,41 +87,39 @@ const onlineStyle = theme => ({
     },
     [theme.breakpoints.between("800", "1100")]: {
       padding: "10px 5px",
-      fontSize: "90%"
-    }
+      fontSize: "90%",
+    },
   },
   icons: {
     width: "30px !important",
     height: "30px !important",
   },
 
-
   planContainer: {
     maxWidth: "93%",
-    flexWrap: 'nowrap',
+    flexWrap: "nowrap",
     margin: 0,
-    marginLeft: '0.1%',
+    marginLeft: "0.1%",
     [theme.breakpoints.down("sm")]: {
       //marginRight: "2%",
       //marginLeft: "1%",
-      marginLeft: '0.1%',
-      flexWrap: 'wrap'
+      marginLeft: "0.1%",
+      flexWrap: "wrap",
     },
-    [theme.breakpoints.between('600', '800')]: {
-      maxWidth: '100%',
-      flexWrap: 'wrap'
-    }
+    [theme.breakpoints.between("600", "800")]: {
+      maxWidth: "100%",
+      flexWrap: "wrap",
+    },
   },
   plan: {
     borderRadius: "10px",
     margin: "10px",
     [theme.breakpoints.between("800", "1100")]: {
-      margin: "9px"
+      margin: "9px",
     },
-    [theme.breakpoints.between('600', '800')]: {
-      maxWidth: '45%'
+    [theme.breakpoints.between("600", "800")]: {
+      maxWidth: "45%",
     },
-
 
     "&:hover": {
       boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.5)",
@@ -134,10 +147,9 @@ const onlineStyle = theme => ({
       "& strong": {
         fontSize: "30px",
         padding: "5px",
-      }
-    }
-  }
-
+      },
+    },
+  },
 });
 
 export default onlineStyle;
