@@ -17,8 +17,9 @@ const courseStyle = (theme) => ({
     paddingRight: "5%",
     paddingLeft: "5%",
     [theme.breakpoints.down("sm")]: {
-      paddingRight: "10%",
-      maxWidth: "50%",
+      paddingRight: "5%",
+      paddingLeft: 0,
+      maxWidth: "80%",
     },
   },
   container: {
@@ -41,8 +42,9 @@ const courseStyle = (theme) => ({
     marginRight: "35%",
     paddingLeft: "5%",
     [theme.breakpoints.down("sm")]: {
-      marginRight: "0%",
-      marginLeft: "0",
+      paddingRight: "3%",
+      marginRight: 0,
+      marginLeft: 0,
     },
   },
   space70: {
