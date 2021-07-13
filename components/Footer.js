@@ -19,11 +19,11 @@ export default function Footer(props) {
   const { whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   const aClasses = classNames({
     [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   return (
     <footer className={footerClasses}>
@@ -36,29 +36,35 @@ export default function Footer(props) {
             <YouTube className={classes.socials} />
             Assista
           </Button>*/}
-          <Button color="facebook" href="https://www.facebook.com/fabiano.machadocorrea" >
+          <Button
+            color="facebook"
+            href="https://www.facebook.com/fabiano.machadocorrea"
+          >
             <Facebook className={classes.socials} />
             Curta
           </Button>
-          <Button color="instagram" href="https://www.instagram.com/oficialfabianocorrea">
+          <Button
+            color="instagram"
+            href="https://www.instagram.com/oficialfabianocorrea"
+          >
             <Instagram className={classes.socials} />
             Siga
           </Button>
-
         </div>
 
         <div className={classes.left}>
-        Site Desenvolvido Por 
+          Site Desenvolvido Por
           <a
-            href="https://japps.site"
+            href="https://japps.vercel.app/"
             className={aClasses}
             target="_blank"
           >
-             Japps -  Mídia e Tecnologia.
+            Japps - Mídia e Tecnologia.
           </a>
         </div>
         <div className={classes.right}>
-        Copyright &copy; {1900 + new Date().getYear()}, Todos os Direitos Reservados.
+          Copyright &copy; {1900 + new Date().getYear()}, Todos os Direitos
+          Reservados.
         </div>
       </div>
     </footer>
@@ -66,5 +72,5 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  whiteFont: PropTypes.bool
+  whiteFont: PropTypes.bool,
 };

@@ -31,9 +31,10 @@ const componentsStyle = (theme) => ({
     width: "40%",
   },
   headerLogo: {
-    width: "50%",
+    width: "90%",
+
     [theme.breakpoints.down("sm")]: {
-      width: "45%",
+      width: "70%",
     },
   },
   title: {

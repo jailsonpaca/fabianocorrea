@@ -66,6 +66,22 @@ const linksStyle = (theme) => ({
       },
     },
   },
+  listLink: {
+    color: "#444444",
+    position: "relative",
+    textAlign: "center",
+    display: "block",
+    width: "100%",
+    margin: "auto",
+    "& span": {
+      textTransform: "none",
+    },
+    "& a": {
+      fontSize: "100%",
+      fontWeight: 500,
+      color: "white",
+    },
+  },
   imageContainer: {
     overflow: "hidden",
     borderRadius: "50%",

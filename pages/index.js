@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import { useMediaQuery } from "@material-ui/core";
 import Header from "../components/Header/Header.js";
-import HeaderLogo from "../assets/img/logo.png";
+import HeaderLogo from "../assets/img/logo.svg";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import Story from "../components/Story";
 import Footer from "../components/Footer.js";

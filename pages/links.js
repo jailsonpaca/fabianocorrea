@@ -15,7 +15,7 @@ export default function Links({ links }) {
   return (
     <div className={classes.root}>
       <List className={classes.list}>
-        <ListItem className={classes.listItem}>
+        <ListItem className={classes.listLink}>
           <div className={classes.imageContainer}>
             <img
               src={image}
@@ -24,7 +24,7 @@ export default function Links({ links }) {
             />
           </div>
         </ListItem>
-        <ListItem className={classes.listItem}>
+        <ListItem className={classes.listLink}>
           <h1 className={classes.title}>
             <strong>Fabiano Corrêa</strong>
           </h1>
@@ -81,7 +81,7 @@ export default function Links({ links }) {
       </List>
       <div style={{ margin: "auto", textAlign: "center", paddingBottom: "2%" }}>
         <a
-          href="https://japps.site/"
+          href="https://japps.vercel.app/"
           style={{ textDecoration: "none", color: "#777" }}
         >
           <h4>
